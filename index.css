@@ -1,0 +1,164 @@
+/*-- Nadimpally, Teja Pruthvi Varma account jadrn031
+CS545 Fall 2015
+proj-4*/
+* {
+    margin: 0;
+    padding: 0;
+    }
+    
+html, body {
+    height: 100%; 
+
+    }
+    
+  
+#header{
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 25px;
+    padding-top: 10px;
+}
+        
+#imgheader{
+    position: absolute;
+    padding-left: 10px;
+    height: 25px;
+    width: 40px;
+}   
+
+#welcome {
+    height: 45px;
+    min-width: 1200px;
+    text-align: center;
+    color: #EEF;
+    background-color: #666;
+}  
+    
+#menu {
+    height: 40px;
+    min-width: 1200px;
+     text-align: center;
+    color: #EEF;
+    background-color: #111;
+}  
+
+#menu ul li{
+    text-align: center;
+    display: inline;
+}
+                
+#menu ul{
+   padding-top: 10px;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color:#EEF;
+    padding: 10px 30px 7px  30px;
+}
+
+#menu ul li a:hover{
+    color:#EEF;
+    background-color: #cccccc;
+}
+
+#content{
+    min-width: 1200px;
+    color: #111;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    text-align: center;
+    border:1px solid #663300;
+}
+
+.main_heading{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 5px;
+    
+}
+
+.inline_image{
+    height: 500px;
+    display: inherit;
+    margin:auto;
+}
+
+
+#content p{
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+.subheading1{
+    padding-left: 50px;
+    padding-top: 20px; 
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.subheading2{
+    padding-left: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+#footer{
+    height: 40px;
+    width: 100%;
+    min-width: 1200px;
+    color: #EEF;
+    background-color: #666;
+}
+
+#footer p{
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 15px;
+}
+
+#table{
+    margin: auto;
+    text-align: left;
+    border: 1px solid black;
+    width: 200px;
+}
+
+
+#table th{
+    background-color: #333333;
+    color: #eeeeee;
+    padding: 10px;
+}
+
+  #categories{
+    
+    height: 40px;
+     text-align: center;
+  
+    }
+
+     #categories input{
+      height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    }
+
+#categories input:hover{
+    color:#EEF;
+    background-color: #cccccc;
+}
+    #counter {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-weight: normal;
+    font-size: 80%;
+    } 

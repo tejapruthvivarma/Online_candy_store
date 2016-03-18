@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Nadimpally, Teja Pruthvi Varma account jadrn031
+CS545 Fall 2015
+proj-4-->
+
+<head>
+	<title>Bertha's Deluxe Chocolates</title>
+
+	<meta http-equiv="content-type" 
+		content="text/html;charset=utf-8" />
+     <link rel="stylesheet" type="text/css"  href="proj4.css" />  
+         <link rel="stylesheet" type="text/css" 
+    href="jquery-ui-1.10.2.custom/css/custom-theme/jquery-ui-1.10.2.custom.min.css" />  
+       <link rel="stylesheet" type="text/css"  href="index.css" />
+    <script type="text/javascript" src="/jquery/jquery.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script>  
+       
+    <script type="text/javascript" src="ajax_get_lib.js"></script>
+    <script type="text/javascript" src="ajax_populate_page.js"></script>
+    <script type="text/javascript" src="shopping_cart.js"></script>  
+
+             
+</head>
+
+<body >
+    <div id="welcome"> 
+        <p id="header">Bertha's Deluxe Chocolates <img id="imgheader" src="images/flag.png" alt="flag" /> </p>
+        
+    </div>  
+    
+    <div id="menu">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+            <li><a id = "our_products" href="products.html">Products</a></li>
+        <li><a id = "products" href="ajax_populate_page.html">Order Online</a></li>
+        <li><a id = "about_us" href="about_us.html">About Us</a></li>
+        <li><a id = "contact_us" href="contact_us.html">Contact Us</a></li>
+        
+        </ul>
+    </div>  
+
+
+<div id="counter"> 
+    <input type="button" value="Your Cart" id="your_cart" /> 
+    <span id="count"></span>
+</div>
+ <hr />
+    <div id = "categories">
+ <input type="button" value="Milk Chocolate" id="milk" />
+<input type="button" value="Dark Chocolate" id="dark" /> 
+<input type="button" value="Nuts and Chews" id="nuts" />
+<input type="button" value="Brittles and Toffies" id="brittle" />
+<input type="button" value="Truffles" id="truffles" />
+<input type="button" value="Gifts" id="gifts" />
+<input type="button" value="Holiday assortments" id="holiday" />
+
+ <hr />
+  </div>
+ <div id="content">
+    <div class="ui-widget">
+    <div id="dialog_modal" class="widget-dialog-container" title="Complete Your Order">
+        <div id="content_f">
+<form id="signUpForm" method="post" action="/perl/jadrn031/proj4/read_cookie_1.cgi">    
+        <fieldset>
+             <legend>Billing Information</legend>  
+            <ul>
+            <li><label>First Name</label><span>&#42;</span>
+                <input type="text" name="First_Name" size="25" />  
+                           
+            <label>Last Name</label><span>&#42;</span>
+                <input type="text" name="Last_Name" size="25" /></li> 
+             <li>  <span id="err_pname" class="message_line"></span></li>
+           
+           
+            <li><label>Address 1</label><span>&#42;</span>
+                <input type="text" name="address1" size="55" /></li> 
+           <li> <span id="err_add1" class="message_line"></span></li>
+                
+             <li><label>Address 2</label>
+                <input type="text" name="address2" size="55" /></li>  
+                   
+            <li><label>City</label><span>&#42;</span>
+                <input type="text" name="city" size="25" /> 
+                <label>State</label><span>&#42;</span>
+                <input type="text" name="state" size="3" />      
+                <label>Zip</label><span>&#42;</span>
+                <input type="text" name="zip" size="10" maxlength="10" /></li>    
+                  
+               <li>  <span id="err_city" class="message_line"></span></li>
+            <li><label>Cell phone</label><span>&#42;</span>
+                (<input type="text" name="area_phone" size="4" maxlength="3" />)  
+                 <input type="text" name="prefix_phone" size="4" maxlength="3" />
+                <input type="text" name="phone" size="5" maxlength="4" /></li> 
+          
+            
+            <li><label>E-mail</label><span>&#42;</span>
+                <input type="text" name="email" size="30" /></li>
+               <li> <span id="err_email" class="message_line"></span></li>
+        </ul>
+            </fieldset>
+Shipping address same as billing address <input type="checkbox"  id="same" />&nbsp; &nbsp;
+
+   <fieldset id = "shipping">
+             <legend>Shipping Information</legend>  
+            <ul>
+            <li><label>First Name</label><span>&#42;</span>
+                <input type="text" name="sFirst_Name" size="25" />  
+                           
+            <label>Last Name</label><span>&#42;</span>
+                <input type="text" name="sLast_Name" size="25" /></li> 
+             <li>  <span id="serr_pname" class="message_line"></span></li>
+           
+           
+            <li><label>Address 1</label><span>&#42;</span>
+                <input type="text" name="saddress1" size="55" /></li> 
+           <li> <span id="serr_add1" class="message_line"></span></li>
+                
+             <li><label>Address 2</label>
+                <input type="text" name="saddress2" size="55" /></li>  
+                   
+            <li><label>City</label><span>&#42;</span>
+                <input type="text" name="scity" size="25" /> 
+                <label>State</label><span>&#42;</span>
+                <input type="text" name="sstate" size="3" />      
+                <label>Zip</label><span>&#42;</span>
+                <input type="text" name="szip" size="10" maxlength="10" /></li>    
+                  
+               <li>  <span id="serr_city" class="message_line"></span></li>
+            <li><label>Cell phone</label><span>&#42;</span>
+                (<input type="text" name="sarea_phone" size="4" maxlength="3" />)  
+                 <input type="text" name="sprefix_phone" size="4" maxlength="3" />
+                <input type="text" name="sphone" size="5" maxlength="4" /></li> 
+          
+             
+            
+            <li><label>E-mail</label><span>&#42;</span>
+                <input type="text" name="semail" size="30" /></li>
+               <li> <span id="serr_email" class="message_line"></span></li>
+        </ul>
+            </fieldset>
+          <br />
+            <fieldset>
+    <legend>Payment Information</legend>
+    <ul>
+
+         <li>
+            <label>Card Type:</label><span>&#42;</span>
+                           
+                  <input type="radio" name="card" value="visa" /> Visa  &nbsp;
+                  <input type="radio" name="card" value="master" />  Master &nbsp;
+                  <input type="radio" name="card" value="discover" />  Discover &nbsp; 
+                 <input type="radio" name="card" value="amex" />  American Express
+        </li>
+        <li> <span id="err_ctype" class="message_line"></span></li>
+        <li>
+            <label>Card Number:</label><span>&#42;</span>
+            <input type="text" name="card_number" size="17" placeholder="XXXXXXXXXXXXXXXX" maxlength="17"/>
+        </li>
+        <li> <span id="err_cardname" class="message_line"></span></li>
+
+         
+
+        <li>
+            <label>Card Expiry</label><span>&#42;</span>
+                        <input type="text" name="mm" placeholder="mm" id="mm" size="3" maxlength="2" /> 
+                            <input type="text" name="yyyy" placeholder="yyyy" id="yyyy" size="5" maxlength="4" />
+        </li>
+        <li> <span id="err_cdate" class="message_line"></span></li>
+         
+   </ul>
+    </fieldset>
+         <div id="button_panel"> 
+            <input type="reset" />
+           <input type="button" class="ui-button" id = "send_data" value="Submit Order"/>
+         </div>  
+</form> 
+</div>      
+</div> 
+</div>
+
+ </div>                            
+       
+</body>
+</html>    
+
